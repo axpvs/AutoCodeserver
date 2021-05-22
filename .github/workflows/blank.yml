@@ -14,8 +14,8 @@ jobs:
         tar xf code-server-3.9.3-linux-amd64.tar.gz
         cd code-server-3.9.3-linux-amd64
         export PASSWORD="${{ secrets.P }}"
-        nohup ./code-server --port 1348 --host 0.0.0.0 --auth password &
+        nohup ./code-server --port 8082 --host 0.0.0.0 --auth password &
         wget https://github.com/open-dingtalk/pierced/raw/master/linux/ding.cfg
         wget https://github.com/open-dingtalk/pierced/raw/master/linux/ding
         sudo chmod 777 ding
-        ./ding -config=./ding.cfg -subdomain=axpv-cs 1348
+        ./ding -config=./ding.cfg -subdomain=axpv-cs 8082
