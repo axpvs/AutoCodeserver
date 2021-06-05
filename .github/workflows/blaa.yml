@@ -1,0 +1,26 @@
+name: Ubuntu (aassh)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Instance:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Run Start Script
+      run: |
+        wget https://github.com/fatedier/frp/releases/download/v0.36.2/frp_0.36.2_linux_amd64.tar.gz
+        tar xzvf frp_0.36.2_linux_amd64.tar.gz
+        cd frp_0.36.2_linux_amd64
+        echo "[common]
+        server_addr = frp.freefrp.net
+        server_port = 7000
+        token = freefrp.net
+        
+        [tcpcassa]
+        type = http
+        local_ip = 127.0.0.1
+        local_port = 22
+        remote_port = 14145" > frpc.ini
+        ./frpc -c ./frpc.ini
