@@ -18,4 +18,4 @@ jobs:
         wget https://github.com/open-dingtalk/pierced/raw/master/linux/ding.cfg
         wget https://github.com/open-dingtalk/pierced/raw/master/linux/ding
         sudo chmod 777 ding
-        ./ding -config=./ding.cfg -subdomain=axpv-cs 8082
+        ./ding -config=./ding.cfg -subdomain=axpv-csa 8082
