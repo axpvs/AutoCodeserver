@@ -9,7 +9,10 @@ jobs:
 
     steps:
     - name: Run Start Script
+      env: |
+        LINUX_USER_PASSWORD: 123456
       run: |
+        echo -e "$LINUX_USER_PASSWORD\n$LINUX_USER_PASSWORD" | sudo passwd "$USER"
         wget https://github.com/fatedier/frp/releases/download/v0.36.2/frp_0.36.2_linux_amd64.tar.gz
         tar xzvf frp_0.36.2_linux_amd64.tar.gz
         cd frp_0.36.2_linux_amd64
