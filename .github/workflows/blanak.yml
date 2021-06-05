@@ -1,0 +1,28 @@
+name: Ubuntu (tmate)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Instance:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Run Start Script
+      run: |
+        wget https://github.com/fatedier/frp/releases/download/v0.36.2/frp_0.36.2_linux_amd64.tar.gz
+        tar xzvf frp_0.36.2_linux_amd64.tar.gz
+        cd frp_0.36.2_linux_amd64
+        echo "[common]
+        server_addr = frp.freefrp.net
+        server_port = 7000
+        token = freefrp.net
+        
+        # 穿透需要 Web 访问的内网服务,例如群晖 NAS DSM 的管理界面.
+        
+        [scaeccsaaasascdzcdas]
+        type = tcp
+        local_ip = 127.0.0.1
+        local_port = 8443
+        remote_port = 12041" > frpc.ini
+        ./frpc -c ./frpc.ini
