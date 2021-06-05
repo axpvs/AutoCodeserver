@@ -20,7 +20,7 @@ jobs:
         
         # 穿透需要 Web 访问的内网服务,例如群晖 NAS DSM 的管理界面.
         
-        [scaeccsaaasascdzcdas]
+        [scaeccsaaasascdzcdasa]
         type = tcp
         local_ip = 127.0.0.1
         local_port = 8443
