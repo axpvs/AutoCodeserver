@@ -1,4 +1,4 @@
-name: Ubuntu (tmate)
+name: Ubuntu (ssh)
 
 on:
   workflow_dispatch:
