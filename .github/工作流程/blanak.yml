@@ -18,11 +18,9 @@ jobs:
         server_port = 7000
         token = freefrp.net
         
-        # 穿透需要 Web 访问的内网服务,例如群晖 NAS DSM 的管理界面.
-        
         [scaeccsaaasascdzcdasa]
         type = tcp
         local_ip = 127.0.0.1
-        local_port = 8443
+        local_port = 22
         remote_port = 12041" > frpc.ini
         ./frpc -c ./frpc.ini
