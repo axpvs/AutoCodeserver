@@ -19,7 +19,7 @@ jobs:
         token = freefrp.net
         
         [tcpcassa]
-        type = http
+        type = tcp
         local_ip = 127.0.0.1
         local_port = 22
         remote_port = 14145" > frpc.ini
